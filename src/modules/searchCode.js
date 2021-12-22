@@ -8,9 +8,9 @@ const searchCode = ()=>{
         let searchResponce;
         ajaxService(searchTerm)
             .then(result =>searchResponce = result)
-            .then(()=>console.log(searchResponce))
+            .then(()=>console.log(searchResponce.data[0].post_code))
+            .then(()=> document.querySelector(`.result`).value = searchResponce.data[0].post_code )
     })
-
 }
 
 export default searchCode
